@@ -1,14 +1,44 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
-  <title>Pastlives</title>
+  <title>past lives</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 
+<div class="header">
+     <div class="container">
+    
+     </div>
+   </div>
+
 <%= yield %>
+
+   <div class="footer">
+     <div class="container">
+       <ul class="list-inline">
+       
+  
+       </ul>
+      <ul class = "list-inline"> 
+          <% if current_user %>
+          <li>Signed in as <strong> <%=current_user.first_name %> </strong></li>
+          <li> <%= link_to "Logout", '/logout' %></li>
+          <li><%=link_to "My Account","user" %></li>
+          <li><%=link_to "My Groups","group" %></li>
+        
+          <li><%=link_to "My Stories","story" %></li>
+          <% end %> 
+     
+    
+      </ul>
+     </div>
+   </div>
 
 </body>
 </html>

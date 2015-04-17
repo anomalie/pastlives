@@ -1,0 +1,24 @@
+
+<h1>Groups</h1>
+
+  <%= link_to "Groups", groups_path %>
+
+<ul>
+  <% @groups.each do |group| %>
+  <li>
+    <p><%= group.group_name%></p>
+   
+
+ <%= link_to "Show this group", group_path(group) %>
+ <%= link_to "Edit this group", edit_group_path(group) %>   
+
+  </li>
+ <%= link_to "New Group", new_group_path(group) %>
+
+  <% end %>
+</ul>
+
+
+
+
+</div>

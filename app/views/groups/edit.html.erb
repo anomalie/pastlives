@@ -1,0 +1,14 @@
+<h1> Edit this group</h1>
+
+<%= form_for @group do |f| %>
+
+  Group Name: <%= f.text_field :group_name%>
+
+
+
+  <%= f.submit "Edit group!" %>
+
+<% end %>
+
+<%= link_to "Back to list of groups", groups_path %>
+</div>

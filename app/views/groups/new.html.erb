@@ -1,0 +1,11 @@
+<%= form_for @group do |f| %>
+
+  Group Name: <%= f.text_field :group_name%>
+
+
+<%= f.submit "Add group!" %>
+
+<% end %>
+
+<%= link_to "Back to the groups list", groups_path %>
+</div>

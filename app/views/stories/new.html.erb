@@ -1,0 +1,13 @@
+<%= form_for @story do |f| %>
+
+  Story Name: <%=f.text_field :story%>
+  
+
+
+<%= f.submit "Add story!" %>
+
+<% end %>
+
+<%= link_to "Back to the storys list", stories_path %>
+
+</div>
