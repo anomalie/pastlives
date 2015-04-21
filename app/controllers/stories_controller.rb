@@ -1,4 +1,5 @@
 class StoriesController < ApplicationController
+ before_filter :authorize
   def index
       @stories = Story.all
   end
@@ -43,7 +44,7 @@ def edit
 
   private
     def story_params
-      params.require(:story).permit(:story, :quote)
+      params.require(:story).permit(:text, :category)
     end
 end
 

@@ -11,32 +11,26 @@
 </head>
 <body>
 
-<div class="header">
-     <div class="container">
-    
-     </div>
-   </div>
 
-<%= yield %>
 
-   <div class="footer">
-     <div class="container">
-       <ul class="list-inline">
-       
-  
-       </ul>
-      <ul class = "list-inline"> 
+    <div class="container-fluid">
+    <%= yield %>
+     <nav class = "nav navbar-nav navbar-center"> 
           <% if current_user %>
-          <li>Signed in as <strong> <%=current_user.first_name %> </strong></li>
-          <li> <%= link_to "Logout", '/logout' %></li>
-          <li><%=link_to "My Account","user" %></li>
-          <li><%=link_to "My Groups","group" %></li>
         
-          <li><%=link_to "My Stories","story" %></li>
-          <% end %> 
+          <li><%=link_to "My Account",users_path %></li>
+          <li><%=link_to "My Groups", groups_path %></li>
+        
+          <li><%=link_to "My Stories","/stories" %></li>
+          <li><%= link_to "Logout", '/logout' %></li>
+          <strong>Signed in as  <%=current_user.first_name %> <%=current_user.last_name %> </strong>  
      
-    
-      </ul>
+          <% end %> 
+      </nav>
+        
+     </div>
+
+     
      </div>
    </div>
 

@@ -1,12 +1,10 @@
-
-<h1>Stories</h1>
-
-  <%= link_to "Stories", stories_path %>
-
+<div class="container-fluid">
+<h1>stories</h1>
 <ul>
   <% @stories.each do |story| %>
   <li>
-    <p><%= story.story%></p>
+    <p><%= story.text%></p>
+    <p><%= story.category%></p>
    
 
  <%= link_to "Show this story", story_path(story) %>
@@ -14,7 +12,5 @@
   </li>
   <% end %>
 </ul>
-
-
 
 </div>

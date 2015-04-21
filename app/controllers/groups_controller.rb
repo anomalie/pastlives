@@ -1,7 +1,7 @@
 class GroupsController < ApplicationController
-  
-def index
-      @groups = Group.all
+ before_filter :authorize
+  def index
+    @groups = Group.all
   end
 
   def show
@@ -23,7 +23,7 @@ def index
     end
   end
 
-def edit
+  def edit
     @group = Group.find(params[:id])
   end
 

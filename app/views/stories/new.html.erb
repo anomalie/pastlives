@@ -1,9 +1,11 @@
-<%= form_for @story do |f| %>
 
-  Story Name: <%=f.text_field :story%>
-  
-
-
+<div class="container-fluid">
+<h1> new story </h1>
+	<%= form_for @story do |f| %>
+	Story<%= f.radio_button(:category, "Story") %>
+	Quote<%= f.radio_button(:category, "Quote") %></br>
+  	<strong><%=f.text_area :text %></strong>
+	</br>
 <%= f.submit "Add story!" %>
 
 <% end %>

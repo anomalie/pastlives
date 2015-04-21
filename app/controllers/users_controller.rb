@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   def index
+    @stories = Story.all
+     
   end
 
   def show
@@ -12,9 +14,10 @@ class UsersController < ApplicationController
   def create
       @user = User.new(user_params)
     if @user.save
-      redirect_to(users_path)
+      session[:user_id] = user.id
+      redirect_to('/login')
     else
-      redirect_to('signup')
+      redirect_to('/users/new')
     end
   end
 
