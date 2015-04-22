@@ -1,5 +1,6 @@
 class StoriesController < ApplicationController
  before_filter :authorize
+ 
   def index
       @stories = Story.all
   end

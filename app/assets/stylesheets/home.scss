@@ -4,13 +4,20 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import 'materialize';
 
+.form-group{
+  
+  margin: 0 auto;
+  width: 40%;
+  border: 1px;
+}
 
 /* Links */
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: teal;
 }
 
 /* Custom default button */
@@ -27,11 +34,11 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #2c3e50;
+
  
 }
 body {
-  color: #2c3e50;
+
   text-align: center;
   text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
@@ -62,50 +69,6 @@ body {
 }
 
 
-/*
- * Header
- */
-.masthead-brand {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.masthead-nav > li {
-  display: inline;
-}
-.masthead-nav > li + li {
-  margin-left: 20px;
-}
-.masthead-nav > li > a {
-  padding-right: 0;
-  padding-left: 0;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff; /* IE8 proofing */
-  color: rgba(255,255,255,.75);
-  border-bottom: 2px solid transparent;
-}
-.masthead-nav > li > a:hover,
-.masthead-nav > li > a:focus {
-  background-color: transparent;
-  border-bottom-color: #a9a9a9;
-  border-bottom-color: rgba(255,255,255,.25);
-}
-.masthead-nav > .active > a,
-.masthead-nav > .active > a:hover,
-.masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
-}
-
-@media (min-width: 768px) {
-  .masthead-brand {
-    float: left;
-  }
-  .masthead-nav {
-    float: right;
-  }
-}
 
 
 /*
@@ -116,9 +79,10 @@ body {
  
 }
 .cover .btn-lg {
-  padding: 10px 20px;
-  font-weight: bold;
-  background-color: #95a5a6;
+  padding: 8px 8px;
+  color: black;
+  background-color: transparent;
+  text-shadow: 0;
 }
 
 
@@ -144,7 +108,7 @@ body {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+    width: 100%; 
   }
 }
 

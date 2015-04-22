@@ -5,8 +5,8 @@
             <h1 class="cover-heading">past lives</h1>
             <p class="lead"> Learning more about past experiences with a story generator.</p>
             
-		<div class="container-fluid">
-		<div class = "row">
+		<div class="container">
+			<div class = "row">
 			
 				<%= form_tag('login', method: :post)do %>
 				
@@ -18,8 +18,8 @@
 				Password: <%= password_field_tag :password %>
 				</div>
 				
-				<%= submit_tag "Login", class: "btn btn-lg btn-success"%> 
-				<a href="/users/new" class="btn btn-lg btn-success">Signup</a>
+				<%= submit_tag "Login", class: "btn btn-lg btn-default"%> 
+				<a href="/users/new" class="btn btn-lg btn-default">Signup</a>
 			<% end %>
 		
 		</div>	

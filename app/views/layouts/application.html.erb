@@ -13,22 +13,23 @@
 
 
 
-    <div class="container-fluid">
     <%= yield %>
-     <nav class = "nav navbar-nav navbar-center"> 
+     
           <% if current_user %>
-        
-          <li><%=link_to "My Account",users_path %></li>
-          <li><%=link_to "My Groups", groups_path %></li>
-        
-          <li><%=link_to "My Stories","/stories" %></li>
-          <li><%= link_to "Logout", '/logout' %></li>
+        <button type="button" class="btn btn-default navbar-btn">
+          <%=link_to "My Account",users_path %></button>
+        <button type="button" class="btn btn-default navbar-btn">
+        <%=link_to "My Groups", groups_path %></button>
+        <button type="button" class="btn btn-default navbar-btn">
+        <%=link_to "My Stories","/stories" %></button>
+         <button type="button" class="btn btn-default navbar-btn">
+       <%= link_to "Logout", '/logout' %></button></br>
           <strong>Signed in as  <%=current_user.first_name %> <%=current_user.last_name %> </strong>  
      
           <% end %> 
-      </nav>
+  
         
-     </div>
+
 
      
      </div>
