@@ -1,16 +1,23 @@
 <div class="container-fluid">
-<h1>my stories</h1>
-<ul>
-  <% @stories.each do |story| %>
-  <li>
-    <p><%= story.text%></p>
-    <p><%= story.category%></p>
-   
+	<h1>my stories</h1>
+	<div class = "stories">
+	<% if current_user %>
+	  <% @stories.each do |story| %>
 
- <%= link_to "Show this story", story_path(story) %>
- <%= link_to "Edit this story", edit_story_path(story) %>   
-  </li>
-  <% end %>
-</ul>
+	    <p><%= story.text%></p>
+	    <p><%= story.category%></p>
+	  
+		<button type="button" class="btn btn-default btn-xs">
+	 		<%= link_to "Show this story", story_path(story)%>
+	 	</button>
+		 <button type="button" class="btn btn-default btn-xs">
+			 <%= link_to "Edit this story", edit_story_path(story) %> 
+		 </button>  
 
+	  <% end %>
+	 <% end %>
+
+	</br>
+	 
+	   <a href="/stories/new" class="btn btn-default btn-sm">New Story</a>
 </div>

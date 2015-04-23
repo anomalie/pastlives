@@ -4,7 +4,7 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-@import 'materialize';
+
 
 .form-group{
   
@@ -25,7 +25,7 @@ a:hover {
 .btn-default:hover,
 .btn-default:focus {
   color: #333;
-  text-shadow: none; /* Prevent inheritence from `body` */
+  text-shadow: none;
   background-color: #555;
   border: 1px solid #fff;
 }

@@ -6,7 +6,15 @@ class StoriesController < ApplicationController
   end
 
   def show
-    @story = Story.find(params[:id])
+    
+    if
+      session[:user_id] = user.id
+      @story = Story.find(params[:id])
+    else
+      @story = nil
+      
+    end
+
   end
 
   def new

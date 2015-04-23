@@ -2,14 +2,16 @@
 <div class="container-fluid">
 <h1> new story </h1>
 	<%= form_for @story do |f| %>
-	Story<%= f.radio_button(:category, "Story") %>
-	Quote<%= f.radio_button(:category, "Quote") %></br>
+	
+	Story <%= f.radio_button(:category, "Story") %>
+	
+	Quote <%= f.radio_button(:category, "Quote") %>
+	</br>
   	<strong><%=f.text_area :text %></strong>
 	</br>
-<%= f.submit "Add story!" %>
+<%= f.submit "Save Story" %>
 
 <% end %>
 
-<%= link_to "Back to the storys list", stories_path %>
 
-</div>
+</div>s
