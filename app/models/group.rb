@@ -1,4 +1,3 @@
 class Group < ActiveRecord::Base
-	has_many :users
-	has_many :stories
+  belongs_to :user
 end

@@ -2,7 +2,13 @@ class StoriesController < ApplicationController
  before_filter :authorize
  
   def index
-      @stories = Story.all
+      if current_user.id == params[:user_id].to_i
+        @stories = Story.where(user_id: params[:user_id])
+      else
+        redirect_to ('/')
+      end
+
+
   end
 
   def show
@@ -24,7 +30,7 @@ class StoriesController < ApplicationController
 
   def create
     @story = Story.new(story_params)
-
+    @story.user=current_user
     if @story.save
       redirect_to stories_path
     else

@@ -11,6 +11,8 @@
 </head>
 
 <body>
+
+
 <div class="site-wrapper">
  
          <%= yield %>
@@ -21,7 +23,7 @@
         <button type="button" class="btn btn-default navbar-btn">
         <%=link_to "My Groups", groups_path %></button>
         <button type="button" class="btn btn-default navbar-btn">
-        <%=link_to "My Stories","/stories" %></button>
+        <%=link_to "My Stories",user_stories_path(current_user) %></button>
          <button type="button" class="btn btn-default navbar-btn">
        <%= link_to "Logout", '/logout' %></button></br>
           <strong>Signed in as  <%=current_user.first_name %> <%=current_user.last_name %> </strong>  
@@ -33,6 +35,7 @@
 
      </div>
 
+<br>
 
 </body>
 </html>
