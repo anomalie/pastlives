@@ -1,15 +1,13 @@
 <div class="container-fluid">
-<h1> Edit this Stories</h1>
+
+<h3> edit this story</h3>
 
 <%= form_for @story do |f| %>
 
-  story Name: <%= f.text_field :text %>
-
-
-
-  <%= f.submit "Edit story!" %>
+    <%= f.text_area :text %>
+    
+  <%= f.submit "Edit story" %>
 
 <% end %>
 
-<%= link_to "Back to list of stories", stories_path %>
 </div>

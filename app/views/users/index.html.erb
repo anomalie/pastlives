@@ -1,13 +1,14 @@
 <div class="container">
 	<h1>past lives</h1>
-	<h5>story feed</h5>
+
 	<div class="row">
+
 		<% @stories.each do |story| %>
 		<div class="col-md-3"></div>	
 		<div class="col-md-3">
-	  		<p class="storys"><%= story.text%></p>
-	  	</div>
-	  	<div class="col-md-3"></div>
+	  		<p class="storiesfeed"><%= story.text%></p>
+  	</div>
+  	<div class="col-md-3"></div>
 	    
 	<% end %>
 

@@ -33,8 +33,11 @@ Rails.application.routes.draw do
   delete "stories/:id" => "stories#destroy"
   get "stories/:id" => "stories#show", as: :story
 
+  # get "groups/:id" => "stories#update" as: :addgroupstory
+
   resources :users do 
   resources :stories
+  resources :groups
   end
 
 end

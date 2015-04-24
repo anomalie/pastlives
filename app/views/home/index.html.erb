@@ -1,38 +1,50 @@
-    <div class="site-wrapper">
-      <div class="site-wrapper-inner">
-        <div class="cover-container">
-          <div class="inner cover">
-            <h1 class="cover-heading">past lives</h1>
-            <p class="lead"> Learning more about past experiences with a story generator.</p>
-            
-		<div class="container">
-			<div class = "row">
-			
-				<%= form_tag('login', method: :post)do %>
-				
-				<div class ="form-group" >
-				<%= label_tag :email %>
-				<%= text_field_tag :email %>
-				</div>
-				<div class ="form-group">
-				<%= label_tag :password %>
-				<%= password_field_tag :password %>
-				</div>
-				
-				<%= submit_tag "Login", class: "btn btn-lg btn-default"%> 
-				<a href="/users/new" class="btn btn-lg btn-default">Signup</a>
-			<% end %>
-		
-		</div>	
-	</div>
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <div class="inner cover">
+        <h1 class="cover-heading">past lives</h1>
+    <!--   <div class = "coverphoto">
+        <img src="<%= asset_path( 'pastlives.jpg' ) %>" /></div> -->
+        <p class="lead"> Learning more about past experiences.</p>
+        
+<div class="container">
+	<div class = "row">
+	
+	<%= render 'sessions/login_form' %>
 
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Sign Up
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
+      </div>
+      <div class="modal-body">
+
+    
+        'users/signup'
+
+       </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
              
            
-            </p>
-          </div>
-
-        </div>
-
+     
       </div>
 
     </div>
+
+  </div>
+
+</div>

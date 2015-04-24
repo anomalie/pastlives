@@ -8,19 +8,12 @@ class StoriesController < ApplicationController
         redirect_to ('/')
       end
 
-
   end
 
   def show
-    
-    if
-      session[:user_id] = user.id
-      @story = Story.find(params[:id])
-    else
-      @story = nil
-      
-    end
 
+      @story = Story.find(params[:id])
+      
   end
 
   def new
@@ -29,33 +22,35 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new(story_params)
-    @story.user=current_user
-    if @story.save
-      redirect_to stories_path
-    else
-      render "new"
-    end
+      @story = Story.new(story_params)
+      @story.user=current_user
+      if @story.save
+        redirect_to user_stories_path(current_user)
+      else
+        render "new"
+      end
   end
 
-def edit
-    @story = Story.find(params[:id])
+  def edit
+      @story = Story.find(params[:id])
   end
 
   def update
-    @story = Story.find(params[:id])
-    if @story.update_attributes(story_params)
-      redirect_to stories_path
-    else
-      render "edit"
-    end
+      @story = Story.find(params[:id])
+      if @story.update_attributes(story_params)
+        redirect_to user_stories_path(current_user)
+      else
+        render "edit"
+      end
   end
 
   def destroy
-    @story = Story.find(params[:id])
-    @story.destroy
-    redirect_to stories_path
+      @story = Story.find(params[:id])
+      @story.destroy
+      redirect_to user_stories_path(current_user)
   end
+
+
 
   private
     def story_params

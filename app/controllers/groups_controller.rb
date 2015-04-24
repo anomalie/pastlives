@@ -2,6 +2,8 @@ class GroupsController < ApplicationController
    before_filter :authorize 
   def index
     @groups = Group.all
+     
+   
   end
 
   def show
@@ -15,13 +17,15 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    
+    @group.user=current_user
     if @group.save
       redirect_to groups_path
     else
       render "new"
     end
   end
+
+
 
   def edit
     @group = Group.find(params[:id])

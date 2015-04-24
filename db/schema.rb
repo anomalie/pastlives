@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150423002955) do
+ActiveRecord::Schema.define(version: 20150424192831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,16 +25,22 @@ ActiveRecord::Schema.define(version: 20150423002955) do
 
   add_index "groups", ["user_id"], name: "index_groups_on_user_id", using: :btree
 
+  create_table "groups_stories", id: false, force: :cascade do |t|
+    t.integer "group_id"
+    t.integer "story_id"
+  end
+
+  add_index "groups_stories", ["group_id"], name: "index_groups_stories_on_group_id", using: :btree
+  add_index "groups_stories", ["story_id"], name: "index_groups_stories_on_story_id", using: :btree
+
   create_table "stories", force: :cascade do |t|
     t.text     "text"
     t.string   "category"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "group_id"
   end
 
-  add_index "stories", ["group_id"], name: "index_stories_on_group_id", using: :btree
   add_index "stories", ["user_id"], name: "index_stories_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
@@ -47,6 +53,5 @@ ActiveRecord::Schema.define(version: 20150423002955) do
   end
 
   add_foreign_key "groups", "users"
-  add_foreign_key "stories", "groups"
   add_foreign_key "stories", "users"
 end
