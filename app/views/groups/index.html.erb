@@ -3,21 +3,17 @@
 
 <ul>
   <% @groups.each do |group| %>
-  <li>
+
     <p><%= group.group_name%></p>
-   
-
- <%= link_to "Show this group", group_path(group) %>
- <%= link_to "Edit this group", edit_group_path(group) %>   
-
-  </li>
-
+ <button type="button" class="btn btn-default btn-xs">  
+ <%= link_to "Show this group", group_path(group) %></button>
+ <button type="button" class="btn btn-default btn-xs">
+ <%= link_to "Edit this group", edit_group_path(group) %></button>
 
   <% end %>
 </ul>
 
- 
 
- <a href="/groups/new" class="btn btn-md btn-default">Create New Group</a>
+ <a href="/groups/new" class="btn btn-xs btn-default">Create New Group</a>
 
 </div>

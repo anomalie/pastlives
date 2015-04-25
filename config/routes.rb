@@ -9,11 +9,9 @@ Rails.application.routes.draw do
   delete "users/:id" => "users#destroy"
   get "users/:id" => "users#show", as: :user
 
-
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
-
   
   get "groups" => "groups#index"
   get "groups/new" => "groups#new" , as: :new_group
@@ -23,8 +21,6 @@ Rails.application.routes.draw do
   delete "groups/:id" => "groups#destroy"
   get "groups/:id" => "groups#show", as: :group
 
-
-
   get "stories" => "stories#index"
   get "stories/new" => "stories#new" 
   post "stories" => "stories#create"
@@ -33,7 +29,9 @@ Rails.application.routes.draw do
   delete "stories/:id" => "stories#destroy"
   get "stories/:id" => "stories#show", as: :story
 
-  # get "groups/:id" => "stories#update" as: :addgroupstory
+  #route for adding group to story
+  get '/group_story' => "stories#group"
+ 
 
   resources :users do 
   resources :stories

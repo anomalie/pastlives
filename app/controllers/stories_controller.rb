@@ -4,15 +4,23 @@ class StoriesController < ApplicationController
   def index
       if current_user.id == params[:user_id].to_i
         @stories = Story.where(user_id: params[:user_id])
+
       else
         redirect_to ('/')
       end
 
   end
+  #method to add a group to story
+  def group
+    @story = Story.find(params[:id])
+    @story.groups.create(group_name: params[:groups])
+    redirect_to(story_path(@story))
+  end
 
   def show
 
       @story = Story.find(params[:id])
+      @group =Group.all
       
   end
 

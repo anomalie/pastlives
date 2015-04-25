@@ -21,11 +21,5 @@ class ApplicationController < ActionController::Base
   	redirect_to '/login' unless current_user.admin
   end
 
-  def addgroupstory
-      # @story = current_user.stories.find_by(params[:id])
-      # group.current_user.groups << groups.story
-      redirect_to ('/')
-  end
-
   
 end
