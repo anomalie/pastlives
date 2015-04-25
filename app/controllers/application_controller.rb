@@ -14,11 +14,11 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize
-    redirect_to '/login' unless current_user
+    redirect_to '/' unless current_user
   end
 
   def require_admin
-  	redirect_to '/login' unless current_user.admin
+  	redirect_to '/' unless current_user.admin
   end
 
   

@@ -1,0 +1,12 @@
+<%= form_for Story.new do |f| %>
+
+story <%= f.radio_button(:category, "story") %>
+
+quote <%= f.radio_button(:category, "quote") %>
+</br>
+<strong><%=f.text_area :text %></strong>
+</br>
+<%= f.submit "save story" %>
+
+<% end %>
+

@@ -1,20 +1,19 @@
 <div class="container-fluid">
-<h2>past lives</h2>
+
 <h5><%= @story.text %></h5>
 
  <%= form_tag('/group_story', method: :get)do %>
   
     <div class ="form-group" >
       <%= select_tag "groups", options_from_collection_for_select(@group,"group_name", "group_name") %> 
-    </div>
-    <%= hidden_field_tag(:id, @story.id) %>
   
-      <%= submit_tag "add story to group", class: "btn btn-xs btn-default"%> 
-   
+    <%= hidden_field_tag(:id, @story.id) %>  
+    <%= submit_tag "add story to group", class: "btn btn-xs btn-default"%>  
+     <button type="button" class="btn btn-default btn-xs">
+    <%= link_to "Edit this story", edit_story_path(@story) %></button>
+      <button type="button" class="btn btn-default btn-xs">
+    <%= link_to "Delete this story!",:story, method: :delete, data: {confirm: "Are you sure you want to delete this story?"} %></button>
+   </div>
 <% end %>
-
-<%= link_to "Edit this story", edit_story_path(@story) %>
-
-<%= link_to "Delete this story!",:story, method: :delete, data: {confirm: "Are you sure you want to delete this story?"} %>
 
 </div>

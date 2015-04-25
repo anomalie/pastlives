@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
-  before_filter :authorize 
+
   def index
     @stories = Story.all
+  
      
   end
 
@@ -16,8 +17,11 @@ class UsersController < ApplicationController
       @user = User.new(user_params)
     if @user.save
       session[:user_id] = user.id
-      redirect_to('/login')
+      flash[:success] = ["You've successfully created an account"]
+    
+      redirect_to('/')
     else
+      flash[:danger] = ["Please Try Again"]
       redirect_to('/users/new')
     end
   end

@@ -5,43 +5,65 @@
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
 </head>
-
 <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="inner cover">
 
-<div class="site-wrapper">
-
-    <% if current_user %>
-    <h1>past lives</h1> 
-    <%end%>
-
-         <%= yield %>
-      <ul class="nav nav-pills">
         <% if current_user %>
-        <button type="button" class="btn btn-default navbar-btn">
-          <%=link_to "Home",users_path %></button>
-        <button type="button" class="btn btn-default navbar-btn">
-        <%=link_to "My Groups", groups_path %></button>
-        <button type="button" class="btn btn-default navbar-btn">
-        <%=link_to "My Stories",user_stories_path(current_user) %></button>
-         <button type="button" class="btn btn-default navbar-btn">
-        <%= link_to "Logout", '/logout' %></button></br>
+            <h1>past lives</h1> 
+        <%end%>
+        <%= yield %>
+
+        <!-- Nav bar buttons -->
+
+        <ul class="nav nav-pills">
+          <% if current_user %>
+          <button type="button" class="btn btn-default navbar-btn">
+            <%=link_to "Home",users_path %></button>
+          <button type="button" class="btn btn-default navbar-btn">
+          <%=link_to "My Groups", groups_path %></button>
+          <button type="button" class="btn btn-default navbar-btn">
+          <%=link_to "My Stories",user_stories_path(current_user) %></button>
+            
+          <!-- New Story Modal Button -->
+          <button type="button" class="btn btn-default navbar-btn" data-toggle="modal" data-target="#myModal">
+            Create New Story
+          </button>
+           <button type="button" class="btn btn-default navbar-btn">
+                  <%= link_to "Logout", '/logout' %></button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Create New Story</h4>
+                </div>
+                <div class="modal-body">
+              
+                  <%= render 'stories/newstory_form' %>
+
+                 </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                 
+                </div>
+              </div>
+            </div>
+          </div></br>
+
           <strong>Signed in as  <%=current_user.first_name %> <%=current_user.last_name %> </strong>  
-     
+         
           <% end %> 
-
-  
-        
-
-
-  </div>
-
-      </ul>
-     </div>
-
-<br>
+          </ul>  
+      </div>
+       </div>
+            </div> 
+    </div>
 
 </body>
 </html>
