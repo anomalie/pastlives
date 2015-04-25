@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  <%= form_tag('/group_story', method: :get)do %>
   
     <div class ="form-group" >
@@ -7,4 +8,15 @@
   
       <%= submit_tag "add story to group", class: "btn btn-xs btn-default"%> 
    
+=======
+<%= form_tag('story.groups', method: :post)do %>
+  
+  <div class ="form-group" >
+    <%= label_tag :group_name %>
+    <%= text_field_tag :group_name %>
+  </div>
+ 
+    <%= submit_tag "Login", class: "btn btn-lg btn-default"%> 
+  <a href="/users/new" class="btn btn-lg btn-default">Signup</a>
+>>>>>>> restructure_model
 <% end %>

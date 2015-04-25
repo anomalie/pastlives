@@ -1,8 +1,16 @@
 <div class= "container-fluid">
-<h1>my groups</h1>
+<h3>my groups</h3>
 
 <ul>
   <% @groups.each do |group| %>
+
+    <p><%= group.group_name%></p>
+   
+
+ <%= link_to "Show this group", group_path(group) %>
+ <%= link_to "Edit this group", edit_group_path(group) %>   
+
+
 
     <p><%= group.group_name%></p>
  <button type="button" class="btn btn-default btn-xs">  

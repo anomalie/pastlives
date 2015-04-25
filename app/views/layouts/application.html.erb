@@ -3,23 +3,25 @@
 <head>
   <title>past lives</title>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
 </head>
 
 <body>
 
-
 <div class="site-wrapper">
+<<<<<<< HEAD
     <% if current_user %>
     <h1>past lives</h1> 
     <%end%>
  
+=======
+
+>>>>>>> restructure_model
          <%= yield %>
-      
+      <ul class="nav nav-pills">
         <% if current_user %>
         <button type="button" class="btn btn-default navbar-btn">
           <%=link_to "Home",users_path %></button>
@@ -32,11 +34,18 @@
           <strong>Signed in as  <%=current_user.first_name %> <%=current_user.last_name %> </strong>  
      
           <% end %> 
+<<<<<<< HEAD
   
         
 
 
   </div>
+=======
+      </ul>
+     </div>
+
+<br>
+>>>>>>> restructure_model
 
 </body>
 </html>
