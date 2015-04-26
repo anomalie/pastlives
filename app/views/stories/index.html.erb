@@ -1,6 +1,10 @@
 <div class="container-fluid">
+	<div class = "row">
 	<h3>my stories</h3>
 	<div class = "stories">
+		<div class="col-md-4"></div>	
+	
+	<div class="col-md-4">
 	<% if current_user %>
 	  <% @stories.each do |story| %>
 			<p><%= story.category%></p>
@@ -15,7 +19,8 @@
 		
 	  <% end %>
 	 <% end %>
+	 </div>
 
-	 
-	   <!-- <a href="/stories/new" class="btn btn-default btn-sm">create new story</a> -->
+	<div class="col-md-4"></div>
+	
 </div>

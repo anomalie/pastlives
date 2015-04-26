@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 
   def index
-    @stories = Story.all
-  
+    @quotes = Story.where(category: "quote")
+    @stories = Story.where(category: "story")
+    @groups = Group.all.includes(:stories)
      
   end
 

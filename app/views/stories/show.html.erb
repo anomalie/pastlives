@@ -5,7 +5,7 @@
  <%= form_tag('/group_story', method: :get)do %>
   
     <div class ="form-group" >
-      <%= select_tag "groups", options_from_collection_for_select(@group,"group_name", "group_name") %> 
+    <%= select_tag "groups", options_from_collection_for_select(@group,"group_name", "group_name") %> 
   
     <%= hidden_field_tag(:id, @story.id) %>  
     <%= submit_tag "add story to group", class: "btn btn-xs btn-default"%>  

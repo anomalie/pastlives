@@ -14,7 +14,11 @@ class StoriesController < ApplicationController
   def group
     @story = Story.find(params[:id])
     @story.groups.create(group_name: params[:groups])
-    redirect_to(story_path(@story))
+    # redirect_to(story_path(@story))
+    flash[:success] = ["story has been added to group"]
+  end
+
+  def groupstories
   end
 
   def show

@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   #route for adding group to story
   get '/group_story' => "stories#group"
+
  
 
   resources :users do 

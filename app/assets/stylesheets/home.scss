@@ -43,11 +43,14 @@ a:hover {
     font-family: journal;
     src: url(journal.woff)
     }
-
+@font-face {
+    font-family: raleway;
+    src: url(raleway_thin-webfont.woff)
+    }
 html,
 body {
   height: 100%;
-  font-family: journal;
+  font-family: raleway;
  
 }
 body {
@@ -61,7 +64,8 @@ body {
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
-  font-family: junction;
+  font-family: raleway;
+  font-style: bold;
   display: table;
   width: 100%;
   height: 100%; /* For at least Firefox */
@@ -98,7 +102,7 @@ body {
   color: black;
   background-color: transparent;
   text-shadow: 0;
-  font-family: junction;
+  font-family: raleway;
 }
 
 
