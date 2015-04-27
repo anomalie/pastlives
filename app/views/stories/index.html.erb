@@ -1,9 +1,10 @@
 <div class="container-fluid">
 	<div class = "row">
-		<h3>my stories</h3>
+		<h4>my stories</h4>
 		<div class="col-md-4"></div>	
 	
 	<div class="col-md-4">
+	<div class="scrollbox">
 	<% if current_user %>
 	  <% @stories.each do |story| %>
 	  <ul class="list-group">
@@ -21,6 +22,7 @@
 	 <% end %>
 
 	 </ul>
+	 </div>
 </div>
 
 	<div class="col-md-4"></div>

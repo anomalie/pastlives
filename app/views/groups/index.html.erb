@@ -5,15 +5,14 @@
         <h4>my groups</h4>
 
           <% @groups.each do |group| %>
-            <p><%= group.group_name%></p>
+            <p><%= group.group_name%></p></br>
 
          <button type="button" class="btn btn-default btn-xs">  
          <%= link_to "Show this group", group_path(group) %></button>
          <button type="button" class="btn btn-default btn-xs">
          <%= link_to "Edit this group", edit_group_path(group) %></button>
 
-          <% end %>
-    
+          <% end %>    
       </br>
      <a href="/groups/new" class="btn btn-xs btn-default">Create New Group</a>
      </div>

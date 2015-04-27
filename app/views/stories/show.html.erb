@@ -1,20 +1,28 @@
 <div class="container-fluid">
-<ul class="list-group">
-<li class="list-group-item">
-<%= @story.text %></li>
-
- <%= form_tag('/group_story', method: :get)do %>
-  
-    <div class ="form-group" >
-    <%= select_tag "groups", options_from_collection_for_select(@group,"group_name", "group_name") %> 
-  
-    <%= hidden_field_tag(:id, @story.id) %>  
-    <%= submit_tag "add story to group", class: "btn btn-xs btn-default"%>  
-     <button type="button" class="btn btn-default btn-xs">
-    <%= link_to "Edit this story", edit_story_path(@story) %></button>
-      <button type="button" class="btn btn-default btn-xs">
-    <%= link_to "Delete this story!",:story, method: :delete, data: {confirm: "Are you sure you want to delete this story?"} %></button>
-   </div>
-<% end %>
-</ul>
+  <div class="row">
+    <div class="col-md-4"></div>  
+      <div class="col-md-4"> 
+          <ul class="list-group">
+            <li class="list-group-item">
+              <%= @story.text %>
+            </li>
+           </ul>
+            <%= form_tag('/group_story', method: :get)do %>
+              
+                <div class ="form-group" >
+                <%= select_tag "groups", options_from_collection_for_select(@group,"group_name", "group_name") %> 
+              
+                <%= hidden_field_tag(:id, @story.id) %>  
+                <%= submit_tag "add story to group", class: "btn btn-xs btn-default"%>  
+              
+                 <button type="button" class="btn btn-default btn-xs">
+                <%= link_to "Edit this story", edit_story_path(@story) %></button>
+                  <button type="button" class="btn btn-default btn-xs">
+                <%= link_to "Delete this story!",:story, method: :delete, data: {confirm: "Are you sure you want to delete this story?"} %></button>
+               </div>
+            <% end %>
+           
+    </div> 
+    <div class="col-md-4"></div> 
+    </div>
 </div>

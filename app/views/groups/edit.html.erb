@@ -1,9 +1,9 @@
 <div class= "container-fluid">
-<h1> Edit this group</h1>
+<h3> Edit this group</h3>
 
 <%= form_for @group do |f| %>
-
-  Group Name: <%= f.text_field :group_name%>
+  <%= f.label_field :group_name%>
+  <%= f.text_field :group_name%>
 
 
 

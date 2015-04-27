@@ -14,17 +14,14 @@
 
         <% if current_user %>
             <h1 class="logo">past lives</h1>
-
         <%end%>
         <%= yield %>
 
-
-
-
         <!-- Nav bar buttons -->
-    <div class= "mastfoot">
-        <ul class="nav nav-pills">
+        </br>
+     
           <% if current_user %>
+          <ul class="nav nav-pills">
           <button type="button" class="btn btn-default navbar-btn">
             <%=link_to "Home",users_path %></button>
           <button type="button" class="btn btn-default navbar-btn">
@@ -60,12 +57,14 @@
             </div>
           </div></br>
 
-          <strong>Signed in as  <%=current_user.first_name %> <%=current_user.last_name %> </strong>  
+          <!-- Current User -->
+          <strong>Logged in as:  <%=current_user.first_name %> <%=current_user.last_name %> </strong>  
          
           <% end %> 
+          </ul>
           </br>
-        </div>
-         
+      
+         <!-- Site Wrapper Div End -->
         </div>
        </div>
       </div> 
