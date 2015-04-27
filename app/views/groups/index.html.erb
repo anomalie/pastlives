@@ -1,22 +1,23 @@
 <div class= "container-fluid">
   <div class="row">
-    <h3>my groups</h3>
+    <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <h4>my groups</h4>
 
-    <div class="col-md-4">
+          <% @groups.each do |group| %>
+            <p><%= group.group_name%></p>
 
-      <% @groups.each do |group| %>
+         <button type="button" class="btn btn-default btn-xs">  
+         <%= link_to "Show this group", group_path(group) %></button>
+         <button type="button" class="btn btn-default btn-xs">
+         <%= link_to "Edit this group", edit_group_path(group) %></button>
 
-        <p><%= group.group_name%></p>
-
-     <button type="button" class="btn btn-default btn-xs">  
-     <%= link_to "Show this group", group_path(group) %></button>
-     <button type="button" class="btn btn-default btn-xs">
-     <%= link_to "Edit this group", edit_group_path(group) %></button>
-
-      <% end %>
-    </div>
-
+          <% end %>
+    
+      </br>
      <a href="/groups/new" class="btn btn-xs btn-default">Create New Group</a>
-
-</div>
+     </div>
+     
+    <div class="col-md-4"></div>
+  </div>
 </div>

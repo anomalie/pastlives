@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
   def index
-    @quotes = Story.where(category: "quote")
-    @stories = Story.where(category: "story")
+    @quotes = Story.where(category: "quote").shuffle
+    @stories = Story.where(category: "story").shuffle
     @groups = Group.all.includes(:stories)
      
   end

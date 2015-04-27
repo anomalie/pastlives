@@ -1,6 +1,7 @@
 <div class="container-fluid">
-
-<h5><%= @story.text %></h5>
+<ul class="list-group">
+<li class="list-group-item">
+<%= @story.text %></li>
 
  <%= form_tag('/group_story', method: :get)do %>
   
@@ -15,5 +16,5 @@
     <%= link_to "Delete this story!",:story, method: :delete, data: {confirm: "Are you sure you want to delete this story?"} %></button>
    </div>
 <% end %>
-
+</ul>
 </div>

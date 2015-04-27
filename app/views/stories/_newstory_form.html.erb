@@ -4,11 +4,10 @@ story <%= f.radio_button(:category, "story") %>
 
 quote <%= f.radio_button(:category, "quote") %>
 </br>
-<strong><%=f.text_area :text, class: "form-control" %></strong>
+<strong><%=f.text_area :text, class: "form-control", rows: "10" %></strong>
 </br>
 <%= f.submit "save story" %>
 
 </div>
 
 <% end %>
-

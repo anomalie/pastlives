@@ -1,14 +1,14 @@
 <div class="container-fluid">
 	<div class = "row">
-	<h3>my stories</h3>
-	<div class = "stories">
+		<h3>my stories</h3>
 		<div class="col-md-4"></div>	
 	
 	<div class="col-md-4">
 	<% if current_user %>
 	  <% @stories.each do |story| %>
-			<p><%= story.category%></p>
-	    <p><%= story.text%></p>
+	  <ul class="list-group">
+			<li class="list-group-item"><%= story.category%></li>
+	    <li class="list-group-item"><%= story.text%></li>
 	  
 		<button type="button" class="btn btn-default btn-xs">
 	 		<%= link_to "Show this story", story_path(story)%>
@@ -19,8 +19,13 @@
 		
 	  <% end %>
 	 <% end %>
-	 </div>
+
+	 </ul>
+</div>
 
 	<div class="col-md-4"></div>
-	
 </div>
+</div>
+
+	
+

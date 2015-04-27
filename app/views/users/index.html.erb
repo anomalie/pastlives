@@ -6,26 +6,31 @@
 	
 		
 		<div class="col-md-4">	
+		
+
+
+
 		<strong>stories:</strong> 
 			<% @stories.each do |story| %> 
-	  	<li class="list-group-item"><%= story.text%> </li>  
+	  	<li class="list-group-item"><%= story.text
+	  	%> </li>  
 		<% end %>
+
+
 	
 		</br>
 
 <!-- Quotes Container -->
-
-
 
 	
 		<strong>quotes:</strong>
 		<% @quotes.each do |quote| %>
 		
 	  		<li class="list-group-item"><%= quote.text%></li>
-			
+			   
+		<% end %>
 
-   
-	<% end %>
+
 		</ul>
 
 			</div>

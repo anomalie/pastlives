@@ -1,15 +1,17 @@
+
 <%= form_tag('login', method: :post)do %>
 	
-	<div class ="form-group" >
+	<div class ="form-group-inline" >
 		<%= label_tag :email %>
 		<%= text_field_tag :email %>
-	</div>
-	<div class ="form-group">
+	</div></br>
+	<div class ="form-group-inline">
 		<%= label_tag :password %>
 		<%= password_field_tag :password %>
-	</div>	
+	</div>	</br>
+	<div class ="form-group-inline">
 		<%= submit_tag "Login", class: "btn btn-lg btn-default"%> 
-		<a href="/users/new" class="btn btn-lg btn-default">Signup</a>
-
+	<a href="/users/new" class="btn btn-lg btn-default">Signup</a>
+	</div>
 <% end %>
 

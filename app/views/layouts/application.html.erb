@@ -13,13 +13,16 @@
           <div class="inner cover">
 
         <% if current_user %>
-            <h1>past lives</h1>
+            <h1 class="logo">past lives</h1>
 
         <%end%>
         <%= yield %>
 
-        <!-- Nav bar buttons -->
 
+
+
+        <!-- Nav bar buttons -->
+    <div class= "mastfoot">
         <ul class="nav nav-pills">
           <% if current_user %>
           <button type="button" class="btn btn-default navbar-btn">
@@ -60,8 +63,8 @@
           <strong>Signed in as  <%=current_user.first_name %> <%=current_user.last_name %> </strong>  
          
           <% end %> 
-
-
+          </br>
+        </div>
          
         </div>
        </div>
