@@ -52,15 +52,16 @@ a:hover {
   text-shadow: none;
 
 }
+.btn btn-default navbar-btn{
+  background: transparent;
+}
 
 .btn-default:hover{
-  color: yellow;
   text-shadow: none;
 
   border: 1px solid black;
 
 }
-
 
 @font-face {
     font-family: junction;
@@ -88,9 +89,7 @@ body {
 
 }
 
-.btn btn-default navbar-btn{
-  background: transparent;
-}
+
 
 
 

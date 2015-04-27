@@ -6,3 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
+user = User.create([{first_name: 'new'}, {last_name: 'new'}, {email:"new@new.com"}, {password:"new"}])
+
+group = Group.create([{group_name: 'newgroup'}])
+
+story = Story.create([{text: "a quote"}, {category: "quote"}])

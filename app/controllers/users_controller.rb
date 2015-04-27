@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       redirect_to('/')
     else
       flash[:danger] = ["Please Try Again"]
-      redirect_to('/users/new')
+      redirect_to('/')
     end
   end
 
