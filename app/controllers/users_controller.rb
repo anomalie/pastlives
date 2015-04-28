@@ -21,7 +21,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       flash[:success] = ["You've successfully created an account"]
     
-      redirect_to('/')
+      redirect_to('/users')
     else
       flash[:danger] = ["Please Try Again"]
       redirect_to('/')
